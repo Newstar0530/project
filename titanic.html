@@ -1,0 +1,12 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code of titanic</title>
+</head>
+<body>
+    <pre><br># step1<br>import pandas as pd<br>import matplotlib.pyplot as plt<br><br># step2<br>df = pd.read_csv(&#x27;/Users/newstar0530/python/ML learning/pandas/titanic.csv&#x27;)<br><br># step3<br># Display the first few rows of the dataset to understand its structure<br>df.head()<br><br># Print information about the columns and their data types<br>df.info()<br><br># Show summary statistics for numerical columns<br>df.describe()<br><br># step4<br># compute median of column Age<br>median = df[&#x27;Age&#x27;].median()<br># let median fill in missing values<br>df[&#x27;Age&#x27;].fillna(median, inplace=True)<br><br># step5<br># Calculate and display the count of passengers by gender<br>df[&#x27;Sex&#x27;].value_counts()<br><br># Compute the average age of passengers<br>df[&#x27;Age&#x27;].mean()<br><br># Determine the survival rate by passenger class<br>survival_rate_by_class = df.groupby(&#x27;Pclass&#x27;)[&#x27;Survived&#x27;].mean()<br>print(survival_rate_by_class)<br><br>#step6<br># Create a bar chart<br>plt.bar(survival_rate_by_class.index, survival_rate_by_class.values)<br><br># Add labels and title<br>plt.xlabel(&#x27;Passenger Class&#x27;)<br>plt.ylabel(&#x27;Survival Rate&#x27;)<br>plt.title(&#x27;Survival Rate by Passenger Class&#x27;)<br><br># Show the plot<br>plt.show()<br><br>#step7<br># Through this assignment, I learned that data cleaning and data exploration can reveal the value of data.<br><br><br><br></pre>
+</body>
+</html>
